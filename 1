@@ -1,0 +1,193 @@
+# tests/test_models.py
+import pytest
+from trece.models import Facet
+
+def test_facet_attributes():
+    facet = Facet(name="Sabiduría", value=7)
+    assert facet.name == "Sabiduría"
+    assert facet.value == 7el_sistema_de_los_13/
+├─ pyproject.toml            # Metadata del paquete (poetry o hatch) o setup.cfg/setup.py
+├─ README.md                 # Instrucciones rápidas
+├─ requirements.txt          # Dependencias opcionales
+├─ trece/                    # Paquete principal
+│  ├─ __init__.py
+│  ├─ config.py              # Configuración, rutas, estilos
+│  ├─ models.py              # Dataclasses: Facet, Brother, Center, Cycle
+│  ├─ protocols.py           # Protocolos diarios, cíclicos y de crisis
+│  ├─ metrics.py             # Escalas, radar, agregaciones
+│  ├─ correspondences.py     # Elementos, mudras, zodiacales opcionales
+│  ├─ registry.py            # Registro y plantillas de bitácora (CSV/JSON)
+│  ├─ cycle.py               # Motor de ciclo 13 días y macro-ciclo 52
+│  ├─ render/
+│  │  ├─ __init__.py
+│  │  ├─ palette.py          # Paletas y símbolos (colores, shapes)
+│  │  ├─ svg.py              # Generación de SVG (puro)
+│  │  ├─ pdf.py              # Generación de PDF (reportlab)
+│  │  ├─ charts.py           # Gráficos: radar, barras (matplotlib)
+│  │  └─ layout.py           # Grillas A4 y tarjeta bolsillo
+│  ├─ data/
+│  │  ├─ core.yaml           # Definiciones de las 12 facetas + 13 Centro
+│  │  ├─ correspondences.yaml
+│  │  └─ styles.yaml         # Colores, tipografías, símbolos
+│  └─ cli.py                 # Línea de comando para construir láminas y tarjetas
+└─ tests/
+   ├─ test_models.py
+   ├─ test_metrics.py
+   └─ test_render.pytrece.modelsfacet.name7facet.valuecorrespondences.yamlstyles.yamlPerfecto, Jesús — vamos a llevar este esquema al formato total que puedas usar como manual personal, con láminas listas para imprimir y versiones en distintos niveles de detalle para que lo tengas tanto en el escritorio como en el bolsillo.
+
+---
+
+📜 Manual Maestro — El Sistema de los 13
+
+📂 Contenido
+
+1. Mapa General (visión sistémica de los 13)
+2. Rueda 12+1 (lámina central)
+3. Matriz 3×4 (profundidad práctica)
+4. Los 12 Hermanos (arquetipos y protocolos)
+5. El 13: Centro (prácticas de integración)
+6. Protocolos diarios, cíclicos y de crisis
+7. Métricas y seguimiento
+8. Correspondencias simbólicas
+9. Plantillas de registro
+10. Carta del Centro (renovable cada 52 días)
+11. Versión de bolsillo
+12. Sugerencia de ciclo anual
+
+---
+
+1. Mapa General
+
+`
+          12 FACETAS   = 3 planos × 4 cualidades
+                    +1 = CENTRO (El Grande)
+----------------------------------------------
+Planos: Físico, Astral, Mental
+Cualidades: Ritmo, Polaridad, Espacio, Dirección
+Canales Maestros: sangre, magnetismo, akasa, voluntad
+`
+
+---
+
+2. Lámina central — Rueda 12+1
+
+- Visual: Círculo con 12 radios y un núcleo central.
+- Código de colores:
+  - Ritmo (☉): dorado
+  - Polaridad (☽): azul profundo
+  - Espacio (✶): violeta
+  - Dirección (→): verde esmeralda
+- Símbolos:
+  - Físico: cuadrado
+  - Astral: círculo
+  - Mental: triángulo
+
+---
+
+3. Matriz 3×4 — Profundidad práctica
+(ver versión expandida de la respuesta anterior con indicadores, desviaciones y correcciones).
+
+Uso:  
+- Consultar mañana y noche.  
+- Identificar faceta débil y aplicar su palanca.
+
+---
+
+4. Los 12 Hermanos — Arquetipos y protocolos
+Cada Hermano tiene:
+- Pregunta activadora
+- Sello corporal
+- Respiración tipo
+- Palabra-semilla
+- Práctica de 3–5 min
+- Indicador de éxito
+
+Ejemplo: Hermano Espacio Astral (✶)
+- Pregunta: “¿Qué emoción es mía y cuál no?”
+- Sello: burbuja permeable
+- Resp: 4–4–6
+- Palabra: “Límite”
+- Indicador: alivio sin desconexión
+
+---
+
+5. El 13 — Centro (El Grande)
+
+Rol: integrar y consagrar  
+Práctica diaria: Silencio 2 min → Rueda rápida de ajustes → Consagración: “Que esto sirva a…” → Exhala larga y manos abiertas.
+
+---
+
+6. Protocolos
+
+Diario (20–30 min)
+- Mañana: Coherencia + Apertura + Dirección + Valencias
+- Mediodía: Mini-scan 12 puntajes + palanca más débil
+- Noche: Registro + Rito 13
+
+Cíclico
+- Consejo de los Hermanos: 1 faceta/día × 12 → día 13 síntesis
+- Macro-ciclo 52 días: 4 estaciones de énfasis
+
+Crisis
+- Árbol de decisión (ruido: físico, astral, mental) → palanca correspondiente.
+
+---
+
+7. Métricas y Seguimiento
+
+- Escala 0–10 por faceta
+- Promedios por pilar
+- Radar 12 radios cada 13 días
+- Coherencia central: ponderación de 4 pilares
+
+---
+
+8. Correspondencias simbólicas
+
+- Elementos: Agua (R), Tierra (P), Aire (E), Fuego (D)
+- Mudras, mantras-semillla
+- Asignaciones zodiacales opcionales para caminatas rituales
+
+---
+
+9. Plantillas de registro
+
+Registro diario  
+Faceta del día | Intención | Práctica | Señal somática | Puntajes | Nota
+
+Revisión día 13  
+Promedios pilares | Centro | Facetas ≤4 | Ajustes
+
+---
+
+10. Carta del Centro (renovable)
+
+- Valor rector
+- 3 límites nobles
+- 3 permisos sagrados
+- Obra de 52 días
+
+---
+
+11. Versión de bolsillo
+
+Tarjeta con:
+- Preguntas clave de cada Hermano
+- Mini-ritual de Centro
+- Árbol de intervención
+- Palabras-semilla
+
+---
+
+12. Ciclo anual sugerido
+
+- 4 estaciones × 13 días (52 por pilar)
+- Revisiones mayores al solsticio/equinoccio
+- Archivo de Cartas del Centro para seguir la evolución
+
+---
+
+💡 Próximo paso: puedo prepararte todo esto como paquete de 4 láminas A4 más 1 tarjeta de bolsillo en PDF, con los colores y símbolos que elijas, para que lo tengas siempre a mano. Además, si quieres, incluyo una versión anillada que combine teoría y práctica.
+
+¿Quieres que te lo estructure ahora mismo para imprimir y empezar mañana con tu primer ciclo de 13 días?
