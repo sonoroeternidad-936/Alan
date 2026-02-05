@@ -191,3 +191,67 @@ Tarjeta con:
 💡 Próximo paso: puedo prepararte todo esto como paquete de 4 láminas A4 más 1 tarjeta de bolsillo en PDF, con los colores y símbolos que elijas, para que lo tengas siempre a mano. Además, si quieres, incluyo una versión anillada que combine teoría y práctica.
 
 ¿Quieres que te lo estructure ahora mismo para imprimir y empezar mañana con tu primer ciclo de 13 días?
+
+
+# trece/models.py
+from dataclasses import dataclass
+from typing import List, Dict
+
+@dataclass
+class Facet:
+    name: str
+    plane: str       # Físico, Astral, Mental
+    quality: str     # Ritmo, Polaridad, Espacio, Dirección
+    value: int = 0   # Escala 0–10
+
+    def adjust(self, delta: int):
+        """Ajusta el valor de la faceta dentro de la escala 0–10."""
+        self.value = max(0, min(10, self.value + delta))
+
+@dataclass
+class Brother:
+    facet: Facet
+    question: str
+    seal: str
+    breath: str
+    seed_word: str
+    practice: str
+    indicator: str
+
+    def activate(self) -> Dict[str, str]:
+        """Devuelve el protocolo breve del Hermano."""
+        return {
+            "pregunta": self.question,
+            "sello": self.seal,
+            "respiración": self.breath,
+            "palabra": self.seed_word,
+            "práctica": self.practice,
+            "indicador": self.indicator
+        }
+
+@dataclass
+class Center:
+    name: str = "El Grande"
+    practice: str = "Silencio → Ajuste → Consagración"
+    value: int = 0
+
+    def consecrate(self, intention: str) -> str:
+        return f"Consagración: {intention} → Exhala larga y manos abiertas."
+
+@dataclass
+class Cycle:
+    days: List[Facet]
+    center: Center
+
+    def average_score(self) -> float:
+        return sum(f.value for f in self.days) / len(self.days)
+
+    def weakest_facet(self) -> Facet:
+        return min(self.days, key=lambda f: f.value)
+
+    def summary(self) -> Dict[str, str]:
+        return {
+            "promedio": f"{self.average_score():.2f}",
+            "más débil": self.weakest_facet().name,
+            "centro": self.center.name
+        }
